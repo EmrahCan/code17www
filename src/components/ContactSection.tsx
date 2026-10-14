@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Send, CheckCircle2, Phone, Mail, MapPin, Star, ShieldCheck, AlertCircle, Calendar, Zap, ExternalLink, ArrowRight } from 'lucide-react';
+import { Send, CheckCircle2, Phone, PhoneCall, Mail, MapPin, Star, ShieldCheck, AlertCircle, Calendar, Zap, ExternalLink, ArrowRight } from 'lucide-react';
 import { submitLead } from '../services/leadService';
 
 interface ContactSectionProps {
@@ -114,16 +114,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-palark-gray font-medium">Direct Voice Line (WebRTC)</div>
+                  <div className="text-xs text-palark-gray font-medium">Direct Voice Line</div>
                   <button
                     type="button"
                     onClick={() => {
-                      const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
+                      const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 button, #myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
                       if (zdrm) zdrm.click();
                     }}
-                    className="text-sm font-bold text-palark-dark hover:text-palark-purple transition-colors text-left flex items-center gap-1.5"
+                    className="text-sm font-bold text-palark-dark hover:text-palark-purple transition-colors text-left flex items-center gap-2 group cursor-pointer"
                   >
-                    <span>SIP #413063 (Click to Call)</span>
+                    <span>Click to Call</span>
+                    <PhoneCall className="w-4 h-4 text-emerald-500 animate-pulse group-hover:scale-110 transition-transform" />
                   </button>
                 </div>
               </div>
@@ -145,9 +146,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-palark-gray font-medium">Headquarters & Domain</div>
+                  <div className="text-xs text-palark-gray font-medium">Headquarters</div>
                   <div className="text-sm font-bold text-palark-dark">
-                    Code17.Tech · Delaware, USA & Europe Hub
+                    USA
                   </div>
                 </div>
               </div>

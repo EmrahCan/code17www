@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, ArrowRight, Calendar, ExternalLink } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Calendar, ExternalLink, PhoneCall } from 'lucide-react';
 import { submitLead } from '../services/leadService';
 
 interface ProblemIntakeSectionProps {
@@ -144,12 +144,13 @@ export const ProblemIntakeSection: React.FC<ProblemIntakeSectionProps> = () => {
               <button
                 type="button"
                 onClick={() => {
-                  const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
+                  const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 button, #myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
                   if (zdrm) zdrm.click();
                 }}
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#00DDBA] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#00DDBA] hover:text-white transition-colors cursor-pointer group"
               >
-                <span>Call 24/7 SRE Desk (WebRTC SIP #413063)</span>
+                <PhoneCall className="w-3.5 h-3.5 text-emerald-400 animate-pulse group-hover:scale-110 transition-transform" />
+                <span>Call 24/7 SRE Desk (Click to Call)</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#00DDBA]" />
               </button>
             </div>

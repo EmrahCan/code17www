@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Star } from 'lucide-react';
+import { ArrowUp, Star, PhoneCall } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -68,12 +68,13 @@ export const Footer: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
+                    const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 button, #myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
                     if (zdrm) zdrm.click();
                   }}
-                  className="hover:text-palark-purple font-bold text-palark-dark text-left text-xs"
+                  className="hover:text-palark-purple font-bold text-palark-dark text-left text-xs inline-flex items-center gap-1.5 group cursor-pointer"
                 >
-                  SIP Line #413063 (Voice Call)
+                  <span>Click to Call</span>
+                  <PhoneCall className="w-3.5 h-3.5 text-emerald-500 animate-pulse group-hover:scale-110 transition-transform" />
                 </button>
               </div>
               <div><a href="mailto:info@code17.tech" className="hover:text-palark-purple text-palark-dark font-semibold">info@code17.tech</a></div>
