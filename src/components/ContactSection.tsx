@@ -114,10 +114,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-palark-gray font-medium">US Direct Hotline</div>
-                  <a href="tel:+18005550170" className="text-sm font-bold text-palark-dark hover:text-palark-blue">
-                    +1 (800) 555-0170
-                  </a>
+                  <div className="text-xs text-palark-gray font-medium">Direct Voice Line (WebRTC)</div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const zdrm = document.querySelector('.zdrm-phone') as HTMLElement;
+                      if (zdrm) zdrm.click();
+                    }}
+                    className="text-sm font-bold text-palark-dark hover:text-palark-purple transition-colors text-left flex items-center gap-1.5"
+                  >
+                    <span>SIP #413063 (Click to Call)</span>
+                  </button>
                 </div>
               </div>
 

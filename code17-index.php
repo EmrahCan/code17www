@@ -128,5 +128,30 @@ $js_url = !empty($js_files) ? '/wp-content/themes/code17-theme/assets/' . basena
     <?php if ($js_url): ?>
     <script type="module" src="<?php echo htmlspecialchars($js_url); ?>"></script>
     <?php endif; ?>
+
+    <!-- Zadarma WebRTC Click-to-Call Widget (SIP #413063) -->
+    <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-lib.js?sub_v=2"></script>
+    <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-fn.js?sub_v=2"></script>
+    <script>
+      (function() {
+        function initZadarma() {
+          if (typeof zadarmaWidgetFn === 'function') {
+            zadarmaWidgetFn(
+              '2f0023dafb607e340d2b',
+              '413063',
+              'circle',
+              'en',
+              true,
+              { right: '24px', bottom: '24px' }
+            );
+          }
+        }
+        if (window.addEventListener) {
+          window.addEventListener('load', initZadarma, false);
+        } else if (window.attachEvent) {
+          window.attachEvent('onload', initZadarma);
+        }
+      })();
+    </script>
   </body>
 </html>

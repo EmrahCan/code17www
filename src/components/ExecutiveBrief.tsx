@@ -91,10 +91,17 @@ export const ExecutiveBrief: React.FC<ExecutiveBriefProps> = ({
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-slate-500 block text-[10px]">US HEADQUARTERS DIRECT:</span>
-                  <a href="tel:+18005550170" className="text-white hover:text-[#FF4F18] transition-colors">
-                    +1 (800) 555-0170
-                  </a>
+                  <span className="text-slate-500 block text-[10px]">DIRECT SIP VOICE LINE:</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const zdrm = document.querySelector('.zdrm-phone') as HTMLElement;
+                      if (zdrm) zdrm.click();
+                    }}
+                    className="text-white hover:text-[#00DDBA] transition-colors text-xs font-mono font-bold"
+                  >
+                    SIP #413063 (Click to Call)
+                  </button>
                 </div>
               </div>
 

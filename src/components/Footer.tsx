@@ -64,7 +64,18 @@ export const Footer: React.FC = () => {
               Direct Desk
             </div>
             <div className="space-y-2 text-xs font-medium">
-              <div><a href="tel:+18005550170" className="hover:text-palark-purple font-bold text-palark-dark">+1 (800) 555-0170</a></div>
+              <div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const zdrm = document.querySelector('.zdrm-phone') as HTMLElement;
+                    if (zdrm) zdrm.click();
+                  }}
+                  className="hover:text-palark-purple font-bold text-palark-dark text-left text-xs"
+                >
+                  SIP Line #413063 (Voice Call)
+                </button>
+              </div>
               <div><a href="mailto:info@code17.tech" className="hover:text-palark-purple text-palark-dark font-semibold">info@code17.tech</a></div>
               <div className="pt-2">
                 <div className="flex items-center gap-1 text-amber-500">

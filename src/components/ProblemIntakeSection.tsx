@@ -141,13 +141,17 @@ export const ProblemIntakeSection: React.FC<ProblemIntakeSectionProps> = () => {
               <div className="text-xs font-mono uppercase tracking-wider text-neutral-400">
                 Need immediate assistance?
               </div>
-              <a
-                href="tel:+18005550170"
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-300 hover:text-white transition-colors"
+              <button
+                type="button"
+                onClick={() => {
+                  const zdrm = document.querySelector('.zdrm-phone') as HTMLElement;
+                  if (zdrm) zdrm.click();
+                }}
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#00DDBA] hover:text-white transition-colors"
               >
-                <span>Contact 24/7 SRE support desk</span>
-                <ArrowRight className="w-3.5 h-3.5 text-purple-400" />
-              </a>
+                <span>Call 24/7 SRE Desk (WebRTC SIP #413063)</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#00DDBA]" />
+              </button>
             </div>
           </div>
 
