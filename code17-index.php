@@ -8,6 +8,7 @@
 header('Cache-Control: no-cache, no-store, must-revalidate, max-age=0');
 header('Pragma: no-cache');
 header('Expires: Thu, 01 Jan 1970 00:00:00 GMT');
+header('Permissions-Policy: microphone=*, camera=(), geolocation=()');
 
 $theme_dir = __DIR__ . '/wp-content/themes/code17-theme';
 $css_files = glob($theme_dir . '/assets/*.css') ?: [];

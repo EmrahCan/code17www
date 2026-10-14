@@ -2,7 +2,11 @@ import React from 'react';
 import { ArrowUp, Star, PhoneCall } from 'lucide-react';
 import { triggerZadarmaCall } from '../utils/callTrigger';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenCall?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenCall }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -68,7 +72,7 @@ export const Footer: React.FC = () => {
               <div>
                 <button
                   type="button"
-                  onClick={triggerZadarmaCall}
+                  onClick={onOpenCall || triggerZadarmaCall}
                   className="hover:text-palark-purple font-bold text-palark-dark text-left text-xs inline-flex items-center gap-1.5 group cursor-pointer"
                 >
                   <span>Click to Call</span>

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Menu, X, ArrowRight, ChevronDown, Zap } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown, Zap, PhoneCall } from 'lucide-react';
 
 interface NavbarProps {
   onOpenContact: () => void;
   onOpenPricing: () => void;
   onOpenBooking?: () => void;
+  onOpenCall?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenPricing, onOpenBooking }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenPricing, onOpenBooking, onOpenCall }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
 
@@ -89,11 +90,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenPricing, on
             </a>
           </nav>
 
-          {/* Right Action: Free Audit + Discuss Project Button */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0">
+          {/* Right Action: Click to Call + Free Audit + Discuss Project Button */}
+          <div className="hidden sm:flex items-center gap-2.5 shrink-0">
+            <button
+              onClick={onOpenCall}
+              type="button"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-all hover:scale-105 whitespace-nowrap shadow-2xs cursor-pointer group"
+            >
+              <PhoneCall className="w-3.5 h-3.5 text-emerald-600 animate-pulse group-hover:scale-110 transition-transform" />
+              <span>Click to Call</span>
+            </button>
+
             <button
               onClick={onOpenBooking || onOpenContact}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-bold text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-200/80 transition-all hover:scale-105 whitespace-nowrap shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-bold text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-200/80 transition-all hover:scale-105 whitespace-nowrap shadow-2xs cursor-pointer"
             >
               <Zap className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
               <span>Free 30-Min Audit</span>
@@ -101,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenPricing, on
 
             <button
               onClick={onOpenContact}
-              className="bg-[#0B0C14] hover:bg-[#1A1128] text-white text-xs font-mono font-bold px-5 py-2.5 rounded-full border border-purple-500/40 hover:border-purple-400 shadow-sm hover:shadow-purple-900/30 transition-all duration-200 flex items-center gap-2 group whitespace-nowrap"
+              className="bg-[#0B0C14] hover:bg-[#1A1128] text-white text-xs font-mono font-bold px-4 py-2 rounded-full border border-purple-500/40 hover:border-purple-400 shadow-sm hover:shadow-purple-900/30 transition-all duration-200 flex items-center gap-2 group whitespace-nowrap cursor-pointer"
             >
               <span>Discuss project</span>
               <ArrowRight className="w-3.5 h-3.5 text-purple-400 group-hover:translate-x-1 transition-transform" />
@@ -109,10 +119,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenPricing, on
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-3">
+          <div className="lg:hidden flex items-center gap-2">
+            <button
+              onClick={onOpenCall}
+              type="button"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-mono font-bold text-emerald-800 bg-emerald-50 border border-emerald-300"
+            >
+              <PhoneCall className="w-3.5 h-3.5 text-emerald-600 animate-pulse" />
+              <span>Call</span>
+            </button>
             <button
               onClick={onOpenContact}
-              className="bg-palark-dark text-white text-xs font-bold px-4 py-2 rounded-full"
+              className="bg-palark-dark text-white text-xs font-bold px-3 py-1.5 rounded-full"
             >
               Contact
             </button>

@@ -27,3 +27,18 @@ export const triggerZadarmaCall = () => {
     fallback.click();
   }
 };
+
+/**
+ * Hangs up active Zadarma WebRTC call
+ */
+export const hangupZadarmaCall = () => {
+  if (typeof window === 'undefined') return;
+  const widget = document.getElementById('myZadarmaCallmeWidget19992');
+  if (widget) {
+    const endBtn = widget.querySelector('.icon-finish-phone-ico, .finish-phone-ico, .callme__content') as HTMLElement;
+    if (endBtn) {
+      endBtn.click();
+      endBtn.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window }));
+    }
+  }
+};

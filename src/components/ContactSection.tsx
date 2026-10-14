@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Send, CheckCircle2, Phone, PhoneCall, Mail, MapPin, Star, ShieldCheck, AlertCircle, Calendar, Zap, ExternalLink, ArrowRight } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Calendar, Zap, ArrowRight, ExternalLink } from 'lucide-react';
 import { submitLead } from '../services/leadService';
-import { triggerZadarmaCall } from '../utils/callTrigger';
 
 interface ContactSectionProps {
   preselectedService?: string;
@@ -106,73 +105,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 <span>Book 30-Min Architecture Audit</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
-            </div>
-
-            {/* Direct contact cards (Side by side) */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-palark-border flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-palark-blue-light text-palark-blue flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-[11px] text-palark-gray font-medium truncate">Direct Voice Line</div>
-                  <button
-                    type="button"
-                    onClick={triggerZadarmaCall}
-                    className="text-xs sm:text-sm font-bold text-palark-dark hover:text-palark-purple transition-colors text-left flex items-center gap-1.5 group cursor-pointer"
-                  >
-                    <span>Click to Call</span>
-                    <PhoneCall className="w-3.5 h-3.5 text-emerald-500 animate-pulse group-hover:scale-110 transition-transform shrink-0" />
-                  </button>
-                </div>
-              </div>
-
-              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-palark-border flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-palark-purple-light text-palark-purple flex items-center justify-center shrink-0">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-[11px] text-palark-gray font-medium truncate">Official Desk</div>
-                  <a href="mailto:info@code17.tech" className="text-xs sm:text-sm font-bold text-palark-dark hover:text-palark-purple truncate block">
-                    info@code17.tech
-                  </a>
-                </div>
-              </div>
-
-              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-palark-border flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-palark-lime-light text-[#008770] flex items-center justify-center shrink-0">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-[11px] text-palark-gray font-medium truncate">Headquarters</div>
-                  <div className="text-xs sm:text-sm font-bold text-palark-dark">
-                    USA
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Hybrid Trust Banner: Clutch Client Rating + 99.99% SLA Guarantee */}
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-[#F5EDFF] via-white to-[#E6FBF7] border border-palark-purple/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
-              <div>
-                <div className="flex items-center gap-1.5 text-amber-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
-                  <span className="font-bold text-xs text-palark-dark ml-1">4.9 / 5.0 Rating</span>
-                </div>
-                <div className="text-xs text-palark-gray mt-1 font-medium">
-                  15+ Verified B2B Reviews on Clutch &amp; GoodFirms
-                </div>
-              </div>
-
-              <div className="sm:border-l sm:border-purple-200/80 sm:pl-4 flex items-center gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
-                <div className="text-xs">
-                  <div className="font-bold text-palark-dark">99.99% SLA Uptime</div>
-                  <div className="text-[11px] text-slate-500">Production Guarantee</div>
-                </div>
-              </div>
             </div>
           </div>
 

@@ -5,9 +5,10 @@ import { triggerZadarmaCall } from '../utils/callTrigger';
 
 interface ProblemIntakeSectionProps {
   onSuccess?: () => void;
+  onOpenCall?: () => void;
 }
 
-export const ProblemIntakeSection: React.FC<ProblemIntakeSectionProps> = () => {
+export const ProblemIntakeSection: React.FC<ProblemIntakeSectionProps> = ({ onOpenCall }) => {
   const [activeTab, setActiveTab] = useState<'meet' | 'contact'>('meet');
   const [email, setEmail] = useState('');
   const [isSubmittingMeet, setIsSubmittingMeet] = useState(false);
@@ -144,7 +145,7 @@ export const ProblemIntakeSection: React.FC<ProblemIntakeSectionProps> = () => {
               </div>
               <button
                 type="button"
-                onClick={triggerZadarmaCall}
+                onClick={onOpenCall || triggerZadarmaCall}
                 className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#00DDBA] hover:text-white transition-colors cursor-pointer group"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-emerald-400 animate-pulse group-hover:scale-110 transition-transform" />

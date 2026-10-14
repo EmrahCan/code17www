@@ -13,11 +13,13 @@ import { ProblemIntakeSection } from './components/ProblemIntakeSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
+import { CallModal } from './components/CallModal';
 
 export function App() {
   const [selectedService, setSelectedService] = useState<string>('');
   const [prepopulatedMessage, setPrepopulatedMessage] = useState<string>('');
   const [isBookingOpen, setIsBookingOpen] = useState<boolean>(false);
+  const [isCallOpen, setIsCallOpen] = useState<boolean>(false);
 
   const scrollToDiscuss = () => {
     const elem = document.getElementById('discuss') || document.getElementById('contact');
@@ -59,6 +61,7 @@ export function App() {
         onOpenContact={scrollToDiscuss}
         onOpenPricing={scrollToPricing}
         onOpenBooking={() => setIsBookingOpen(true)}
+        onOpenCall={() => setIsCallOpen(true)}
       />
 
       <main>
@@ -94,7 +97,7 @@ export function App() {
         <PricingSection onSelectPlan={handleSelectPlan} />
 
         {/* 10. Start with your infrastructure problem (High-Conversion Intake) */}
-        <ProblemIntakeSection />
+        <ProblemIntakeSection onOpenCall={() => setIsCallOpen(true)} />
 
         {/* 11. Detailed Contact & Desk Information */}
         <ContactSection
@@ -105,12 +108,18 @@ export function App() {
       </main>
 
       {/* 12. Imprint & Footer */}
-      <Footer />
+      <Footer onOpenCall={() => setIsCallOpen(true)} />
 
       {/* 13. High-Converting Instant Booking Modal (Ad Lead Magnet) */}
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
+      />
+
+      {/* 14. Interactive WebRTC Call Modal Popup */}
+      <CallModal
+        isOpen={isCallOpen}
+        onClose={() => setIsCallOpen(false)}
       />
     </div>
   );
