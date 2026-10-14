@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 400px;
+      height: 400px;
+      background: #0A0D12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Subtle background grid */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    /* Glow effect */
+    .glow {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(0, 221, 186, 0.18) 0%, rgba(112, 0, 255, 0.12) 50%, transparent 70%);
+      filter: blur(20px);
+    }
+    .badge {
+      position: relative;
+      z-index: 2;
+      width: 240px;
+      height: 240px;
+      background: linear-gradient(145deg, #161B22 0%, #0F1318 100%);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      border-radius: 56px;
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 221, 186, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .accent-dot {
+      position: absolute;
+      top: 36px;
+      left: 48px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #00DDBA;
+      box-shadow: 0 0 16px #00DDBA;
+    }
+    .number {
+      font-size: 104px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -4px;
+      line-height: 1;
+      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Inter", sans-serif;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .brand-sub {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: #00DDBA;
+      margin-top: 6px;
+      text-transform: uppercase;
+      font-family: "JetBrains Mono", monospace, monospace;
+    }
+    .tech-tag {
+      position: absolute;
+      bottom: -1px;
+      right: 24px;
+      background: rgba(112, 0, 255, 0.25);
+      border: 1px solid rgba(112, 0, 255, 0.5);
+      border-bottom: none;
+      padding: 3px 10px;
+      border-radius: 6px 6px 0 0;
+      font-size: 10px;
+      font-family: monospace;
+      color: #A78BFA;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+  <div class="badge">
+    <div class="accent-dot"></div>
+    <div class="number">17</div>
+    <div class="brand-sub">CODE17</div>
+    <div class="tech-tag">.TECH</div>
+  </div>
+</body>
+</html>

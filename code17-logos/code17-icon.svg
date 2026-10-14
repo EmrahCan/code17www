@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="128" fill="#1B1F24" />
+  <circle cx="190" cy="256" r="92" fill="#00DDBA" />
+  <text x="286" y="310" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif" font-weight="900" font-size="200" fill="#FFFFFF">17</text>
+</svg>

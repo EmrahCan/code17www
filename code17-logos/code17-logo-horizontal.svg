@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 90" width="440" height="90">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@900&amp;family=JetBrains+Mono:wght@600&amp;display=swap');
+      .title { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; font-weight: 900; font-size: 29px; letter-spacing: -0.8px; }
+      .sub { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 13px; letter-spacing: 0.5px; fill: #5E6470; }
+    </style>
+  </defs>
+
+  <!-- Icon Box -->
+  <g transform="translate(14, 17)">
+    <rect width="56" height="56" rx="16" fill="#1B1F24" />
+    <circle cx="21" cy="28" r="10" fill="#00DDBA" />
+    <text x="32" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="24" fill="#FFFFFF">17</text>
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(86, 42)">
+    <text class="title" fill="#1B1F24">Code17<tspan fill="#00DDBA">.Tech</tspan></text>
+    <text class="sub" y="24">SaaS &amp; SRE Engineering</text>
+  </g>
+</svg>

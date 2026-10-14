@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-[#1B1F24] antialiased;
+  }
+}
+
+/* Palark-style highlight spans */
+.span-purple {
+  color: #9540FF;
+  font-weight: 700;
+}
+
+.span-blue {
+  color: #00A1FC;
+  font-weight: 700;
+}
+
+.span-lime {
+  color: #008770;
+  font-weight: 700;
+}
+
+.badge-purple {
+  background-color: #F5EDFF;
+  color: #9540FF;
+}
+
+.badge-blue {
+  background-color: #EBF7FF;
+  color: #0077CC;
+}
+
+.badge-lime {
+  background-color: #E6FBF7;
+  color: #007A65;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #D0D5DD;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #98A2B3;
+}

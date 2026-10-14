@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #0A0D12;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 64px 72px;
+    }
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+    .glow-1 {
+      position: absolute;
+      top: -100px;
+      left: 200px;
+      width: 500px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 221, 186, 0.16) 0%, transparent 70%);
+      filter: blur(60px);
+    }
+    .glow-2 {
+      position: absolute;
+      bottom: -100px;
+      right: 150px;
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(112, 0, 255, 0.22) 0%, transparent 70%);
+      filter: blur(70px);
+    }
+    .header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: #161B22;
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 28px;
+      font-weight: 900;
+      box-shadow: 0 4px 20px rgba(0, 221, 186, 0.2);
+    }
+    .brand-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -1px;
+    }
+    .brand-accent {
+      color: #00DDBA;
+    }
+    .uptime-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 221, 186, 0.1);
+      border: 1px solid rgba(0, 221, 186, 0.35);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #00DDBA;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #00DDBA;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00DDBA;
+    }
+    .main-body {
+      position: relative;
+      z-index: 2;
+      margin-top: 24px;
+    }
+    .h1-title {
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+    .h1-title span.purple {
+      color: #A78BFA;
+    }
+    .h1-title span.cyan {
+      color: #00DDBA;
+    }
+    .subtext {
+      font-size: 22px;
+      color: #94A3B8;
+      max-width: 820px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+    .footer-rail {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .pills {
+      display: flex;
+      gap: 12px;
+    }
+    .pill {
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: #CBD5E1;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+    .domain {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: #00DDBA;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <div class="header">
+    <div class="logo-lockup">
+      <div class="logo-badge">17</div>
+      <div class="brand-title">Code17<span class="brand-accent">.Tech</span></div>
+    </div>
+    <div class="uptime-badge">
+      <span class="pulse-dot"></span>
+      24/7/365 PRODUCTION SRE &bull; 99.99% SLA
+    </div>
+  </div>
+
+  <div class="main-body">
+    <div class="h1-title">
+      We build the <span class="purple">software</span>.<br>
+      We guard the <span class="cyan">uptime</span>.
+    </div>
+    <div class="subtext">
+      Dual-discipline technology studio: High-concurrency enterprise SaaS development and mission-critical 24/7 Site Reliability Engineering.
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div class="pills">
+      <div class="pill">Kubernetes & GitOps</div>
+      <div class="pill">AWS &bull; Azure &bull; GCP</div>
+      <div class="pill">Enterprise SaaS</div>
+      <div class="pill">&lt; 15m Incident SLA</div>
+    </div>
+    <div class="domain">https://code17.tech</div>
+  </div>
+</body>
+</html>

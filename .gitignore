@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Temporary local archives & screenshot audits
+*.zip
+screenshot_*.png
+viewport_*.png
+final_audit_*.png
+full_screenshot_*.png
+saas_audit_*.png
+widget_*.png
+header_en_only.png
+new_widget_hero_verified.png
+
+# Standalone mobile app subproject (tracked in its own git repo)
+Finikeliyiz.Biz/
+
+# Editor directories
+.vscode/
+.idea/

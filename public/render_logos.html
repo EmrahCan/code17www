@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: transparent;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    
+    /* Horizontal Light Background Logo */
+    #logo-horizontal-light {
+      width: 440px;
+      height: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 16px;
+      background: transparent;
+    }
+    .icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: #1B1F24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 26px;
+      letter-spacing: -0.5px;
+      box-shadow: 0 4px 14px rgba(27, 31, 36, 0.16);
+      position: relative;
+    }
+    .text-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title-light {
+      font-size: 28px;
+      font-weight: 900;
+      color: #1B1F24;
+      letter-spacing: -0.8px;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+    }
+    .brand-accent {
+      color: #00DDBA;
+    }
+    .brand-sub-light {
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #5E6470;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 6px;
+    }
+
+    /* Horizontal Dark Background Logo */
+    #logo-horizontal-dark {
+      width: 440px;
+      height: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 16px;
+      background: transparent;
+    }
+    .icon-box-dark {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: #1B1F24;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 26px;
+      letter-spacing: -0.5px;
+      box-shadow: 0 4px 20px rgba(0, 221, 186, 0.15);
+      position: relative;
+    }
+    .brand-title-dark {
+      font-size: 28px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.8px;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+    }
+    .brand-sub-dark {
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #94A3B8;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 6px;
+    }
+
+    /* Big Icon 512x512 */
+    #icon-big {
+      width: 512px;
+      height: 512px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+    }
+    .icon-box-large {
+      width: 440px;
+      height: 440px;
+      border-radius: 110px;
+      background: #1B1F24;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+    .large-dot {
+      position: absolute;
+      top: 80px;
+      left: 90px;
+      width: 36px;
+      height: 36px;
+      background: #00DDBA;
+      border-radius: 50%;
+      box-shadow: 0 0 24px #00DDBA;
+    }
+    .large-num {
+      font-size: 210px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -10px;
+      line-height: 1;
+      text-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div id="logo-horizontal-light">
+    <div class="icon-box">17</div>
+    <div class="text-box">
+      <div class="brand-title-light">Code17<span class="brand-accent">.Tech</span></div>
+      <div class="brand-sub-light">SaaS & SRE Engineering</div>
+    </div>
+  </div>
+
+  <div id="logo-horizontal-dark">
+    <div class="icon-box-dark">17</div>
+    <div class="text-box">
+      <div class="brand-title-dark">Code17<span class="brand-accent">.Tech</span></div>
+      <div class="brand-sub-dark">SaaS & SRE Engineering</div>
+    </div>
+  </div>
+
+  <div id="icon-big">
+    <div class="icon-box-large">
+      <div class="large-dot"></div>
+      <div class="large-num">17</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 512px;
+      height: 512px;
+      background: transparent;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .icon-box {
+      width: 440px;
+      height: 440px;
+      border-radius: 120px;
+      background: #1B1F24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+    .accent-circle {
+      position: absolute;
+      top: 90px;
+      left: 100px;
+      width: 44px;
+      height: 44px;
+      background: #00DDBA;
+      border-radius: 50%;
+      box-shadow: 0 0 24px rgba(0, 221, 186, 0.8);
+    }
+    .number {
+      font-size: 210px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -8px;
+      line-height: 1;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="icon-box">
+    <div class="accent-circle"></div>
+    <div class="number">17</div>
+  </div>
+</body>
+</html>

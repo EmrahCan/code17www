@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://code17.tech/sitemap.xml
