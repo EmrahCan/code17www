@@ -144,7 +144,7 @@ export const ProblemIntakeSection: React.FC<ProblemIntakeSectionProps> = () => {
               <button
                 type="button"
                 onClick={() => {
-                  const zdrm = document.querySelector('.zdrm-phone') as HTMLElement;
+                  const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
                   if (zdrm) zdrm.click();
                 }}
                 className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#00DDBA] hover:text-white transition-colors"

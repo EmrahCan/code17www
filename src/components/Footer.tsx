@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    const zdrm = document.querySelector('.zdrm-phone') as HTMLElement;
+                    const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
                     if (zdrm) zdrm.click();
                   }}
                   className="hover:text-palark-purple font-bold text-palark-dark text-left text-xs"

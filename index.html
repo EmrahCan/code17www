@@ -102,28 +102,59 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- Zadarma WebRTC Click-to-Call Widget (SIP #413063) -->
-    <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-lib.js?sub_v=2"></script>
-    <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-fn.js?sub_v=2"></script>
+    <div id="myZadarmaCallmeWidget19992" style="position: fixed; bottom: 24px; right: 24px; z-index: 99999;"></div>
+    <div id="zadarmaScripts"></div>
     <script>
       (function() {
-        function initZadarma() {
-          if (typeof zadarmaWidgetFn === 'function') {
-            zadarmaWidgetFn(
-              '2f0023dafb607e340d2b',
-              '413063',
-              'circle',
-              'en',
-              true,
-              { right: '24px', bottom: '24px' }
-            );
+        var script = document.createElement('script');
+        script.src = 'https://my.zadarma.com/callmewidget/v2.0.9/loader.js';
+        script.onload = function() {
+          if (typeof myZadarmaCallmeWidgetFn19992 === 'function') {
+            myZadarmaCallmeWidgetFn19992();
           }
+        };
+        document.getElementById('zadarmaScripts').appendChild(script);
+      }());
+
+      var myZadarmaCallmeWidget19992;
+      var myZadarmaCallmeWidgetFn19992 = function() {
+        if (typeof ZadarmaCallmeWidget !== 'undefined') {
+          myZadarmaCallmeWidget19992 = new ZadarmaCallmeWidget("myZadarmaCallmeWidget19992");
+          myZadarmaCallmeWidget19992.create({
+            "widgetId": "g1ngnf2g9GUJXFcZKjs8ja7taYY8unyhN2gTaa1r2NccyXaUJggVu1x96tuUUfvh71yg2Y2Es66m4Zy46Sbfmu591csscFYv507d395fc12e33f82b408271f2c537ec",
+            "sipId": "413063",
+            "domElement": "myZadarmaCallmeWidget19992"
+          }, {
+            "shape": "circle",
+            "language": "en",
+            "width": "0",
+            "dtmf": false,
+            "font": "'Plus Jakarta Sans', sans-serif",
+            "color_call": "rgb(255, 255, 255)",
+            "color_bg_call": "rgb(0, 221, 186)",
+            "color_border_call": "rgb(0, 200, 168)",
+            "is_custom_hover": 1,
+            "color_call_hover": "rgb(15, 23, 42)",
+            "bg_call_hover": "rgb(0, 196, 165)",
+            "border_call_hover": "rgb(0, 180, 150)",
+            "color_connection": "rgb(255, 255, 255)",
+            "color_bg_connection": "rgb(112, 0, 255)",
+            "color_border_connection": "rgb(140, 40, 255)",
+            "color_calling": "rgb(255, 255, 255)",
+            "color_border_calling": "rgb(255, 218, 128)",
+            "color_bg_calling": "rgb(255, 181, 0)",
+            "color_ended": "rgb(255, 255, 255)",
+            "color_bg_ended": "rgb(164, 164, 164)",
+            "color_border_ended": "rgb(210, 210, 210)"
+          });
         }
-        if (window.addEventListener) {
-          window.addEventListener('load', initZadarma, false);
-        } else if (window.attachEvent) {
-          window.attachEvent('onload', initZadarma);
-        }
-      })();
+      };
+
+      if (window.addEventListener) {
+        window.addEventListener('load', myZadarmaCallmeWidgetFn19992, false);
+      } else if (window.attachEvent) {
+        window.attachEvent('onload', myZadarmaCallmeWidgetFn19992);
+      }
     </script>
   </body>
 </html>

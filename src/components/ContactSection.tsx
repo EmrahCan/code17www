@@ -118,7 +118,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => {
-                      const zdrm = document.querySelector('.zdrm-phone') as HTMLElement;
+                      const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
                       if (zdrm) zdrm.click();
                     }}
                     className="text-sm font-bold text-palark-dark hover:text-palark-purple transition-colors text-left flex items-center gap-1.5"
