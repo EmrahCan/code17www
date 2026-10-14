@@ -108,44 +108,44 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </button>
             </div>
 
-            {/* Direct contact cards */}
-            <div className="space-y-4 pt-2">
-              <div className="p-4 rounded-2xl bg-[#F8F9FA] border border-palark-border flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-palark-blue-light text-palark-blue flex items-center justify-center shrink-0">
-                  <Phone className="w-5 h-5" />
+            {/* Direct contact cards (Side by side) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-palark-border flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-palark-blue-light text-palark-blue flex items-center justify-center shrink-0">
+                  <Phone className="w-4 h-4" />
                 </div>
-                <div>
-                  <div className="text-xs text-palark-gray font-medium">Direct Voice Line</div>
+                <div className="min-w-0">
+                  <div className="text-[11px] text-palark-gray font-medium truncate">Direct Voice Line</div>
                   <button
                     type="button"
                     onClick={triggerZadarmaCall}
-                    className="text-sm font-bold text-palark-dark hover:text-palark-purple transition-colors text-left flex items-center gap-2 group cursor-pointer"
+                    className="text-xs sm:text-sm font-bold text-palark-dark hover:text-palark-purple transition-colors text-left flex items-center gap-1.5 group cursor-pointer"
                   >
                     <span>Click to Call</span>
-                    <PhoneCall className="w-4 h-4 text-emerald-500 animate-pulse group-hover:scale-110 transition-transform" />
+                    <PhoneCall className="w-3.5 h-3.5 text-emerald-500 animate-pulse group-hover:scale-110 transition-transform shrink-0" />
                   </button>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#F8F9FA] border border-palark-border flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-palark-purple-light text-palark-purple flex items-center justify-center shrink-0">
-                  <Mail className="w-5 h-5" />
+              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-palark-border flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-palark-purple-light text-palark-purple flex items-center justify-center shrink-0">
+                  <Mail className="w-4 h-4" />
                 </div>
-                <div>
-                  <div className="text-xs text-palark-gray font-medium">Official Inquiry Desk</div>
-                  <a href="mailto:info@code17.tech" className="text-sm font-bold text-palark-dark hover:text-palark-purple">
+                <div className="min-w-0">
+                  <div className="text-[11px] text-palark-gray font-medium truncate">Official Desk</div>
+                  <a href="mailto:info@code17.tech" className="text-xs sm:text-sm font-bold text-palark-dark hover:text-palark-purple truncate block">
                     info@code17.tech
                   </a>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#F8F9FA] border border-palark-border flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-palark-lime-light text-[#008770] flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" />
+              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-palark-border flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-palark-lime-light text-[#008770] flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 h-4" />
                 </div>
-                <div>
-                  <div className="text-xs text-palark-gray font-medium">Headquarters</div>
-                  <div className="text-sm font-bold text-palark-dark">
+                <div className="min-w-0">
+                  <div className="text-[11px] text-palark-gray font-medium truncate">Headquarters</div>
+                  <div className="text-xs sm:text-sm font-bold text-palark-dark">
                     USA
                   </div>
                 </div>
