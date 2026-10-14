@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Send, CheckCircle2, Phone, PhoneCall, Mail, MapPin, Star, ShieldCheck, AlertCircle, Calendar, Zap, ExternalLink, ArrowRight } from 'lucide-react';
 import { submitLead } from '../services/leadService';
+import { triggerZadarmaCall } from '../utils/callTrigger';
 
 interface ContactSectionProps {
   preselectedService?: string;
@@ -117,10 +118,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <div className="text-xs text-palark-gray font-medium">Direct Voice Line</div>
                   <button
                     type="button"
-                    onClick={() => {
-                      const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 button, #myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
-                      if (zdrm) zdrm.click();
-                    }}
+                    onClick={triggerZadarmaCall}
                     className="text-sm font-bold text-palark-dark hover:text-palark-purple transition-colors text-left flex items-center gap-2 group cursor-pointer"
                   >
                     <span>Click to Call</span>

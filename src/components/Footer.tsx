@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp, Star, PhoneCall } from 'lucide-react';
+import { triggerZadarmaCall } from '../utils/callTrigger';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -67,10 +68,7 @@ export const Footer: React.FC = () => {
               <div>
                 <button
                   type="button"
-                  onClick={() => {
-                    const zdrm = (document.querySelector('#myZadarmaCallmeWidget19992 button, #myZadarmaCallmeWidget19992 div, #myZadarmaCallmeWidget19992') || document.querySelector('.zdrm-phone')) as HTMLElement;
-                    if (zdrm) zdrm.click();
-                  }}
+                  onClick={triggerZadarmaCall}
                   className="hover:text-palark-purple font-bold text-palark-dark text-left text-xs inline-flex items-center gap-1.5 group cursor-pointer"
                 >
                   <span>Click to Call</span>
