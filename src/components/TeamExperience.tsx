@@ -8,57 +8,57 @@ interface TeamExperienceProps {
 export const TeamExperience: React.FC<TeamExperienceProps> = ({ onOpenBooking }) => {
   const stats = [
     {
-      number: '17+',
-      label: 'Years of collective SRE & DevOps leadership',
+      number: '12+',
+      label: 'Years of production engineering experience',
       highlightColor: 'text-[#9540FF]',
       bgColor: 'bg-[#F5EDFF]',
     },
     {
       number: '24/7',
-      label: 'Maintenance with guaranteed 15-min SLA response',
+      label: 'On-call SRE with P1 incident response under 15 minutes',
       highlightColor: 'text-[#00A1FC]',
       bgColor: 'bg-[#EBF7FF]',
     },
     {
-      number: '150+',
-      label: 'Satisfied enterprise clients across US & Europe',
+      number: '99.99%',
+      label: 'Uptime target defined in your SLA for critical systems',
       highlightColor: 'text-[#008770]',
       bgColor: 'bg-[#E6FBF7]',
     },
     {
-      number: '1,200+',
-      label: 'Production microservices maintained with 0 downtime',
+      number: '100%',
+      label: 'Senior engineering attention with zero offshore outsourcing',
       highlightColor: 'text-[#FF5722]',
       bgColor: 'bg-[#FFF0EB]',
     },
   ];
 
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 bg-white border-b border-palark-border">
+    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 bg-white border-b border-c17-border">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="text-xs font-bold uppercase tracking-widest text-palark-purple mb-2">
+          <div className="text-xs font-bold uppercase tracking-widest text-c17-purple mb-2">
             TRACK RECORD
           </div>
-          <h2 className="font-sans font-black text-3xl sm:text-5xl text-palark-dark tracking-tight">
+          <h2 className="font-sans font-black text-3xl sm:text-5xl text-c17-dark tracking-tight">
             Our team’s current experience
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-palark-gray font-normal">
+          <p className="mt-4 text-base sm:text-lg text-c17-gray font-normal">
             Battle-tested engineering metrics accumulated across hundreds of mission-critical cloud deployments.
           </p>
         </div>
 
-        {/* 4 Big Numbers Grid (Palark signature layout) */}
+        {/* 4 Big Numbers Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#F8F9FA] border border-palark-border rounded-3xl p-8 flex flex-col justify-between hover:border-slate-300 transition-colors"
+              className="bg-[#F8F9FA] border border-c17-border rounded-3xl p-8 flex flex-col justify-between hover:border-slate-300 transition-colors"
             >
               <div className={`font-sans font-black text-5xl sm:text-6xl ${item.highlightColor} tracking-tight`}>
                 {item.number}
               </div>
-              <p className="font-sans font-semibold text-sm sm:text-base text-palark-dark mt-6 leading-snug">
+              <p className="font-sans font-semibold text-sm sm:text-base text-c17-dark mt-6 leading-snug">
                 {item.label}
               </p>
             </div>
@@ -89,7 +89,7 @@ export const TeamExperience: React.FC<TeamExperienceProps> = ({ onOpenBooking })
                   Meet Your Lead SRE Architect
                 </h3>
                 <p className="mt-3 text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
-                  Your mission-critical infrastructure is never handed over to junior ticket-handlers or outsourced offshore desks. At <strong>Code17</strong>, every cloud migration, Kubernetes fleet, and Terraform module is architected, verified, and continuously monitored directly by senior engineering leadership with 12+ years of production experience.
+                  Your mission-critical infrastructure is never handed over to junior ticket-handlers or outsourced offshore desks. At <strong>Code17</strong>, every cloud migration, Kubernetes fleet, and Terraform module is architected, verified, and continuously monitored directly by senior engineering leadership with 12+ years of production engineering experience.
                 </p>
               </div>
 
@@ -138,10 +138,10 @@ export const TeamExperience: React.FC<TeamExperienceProps> = ({ onOpenBooking })
                   const elem = document.getElementById('discuss');
                   if (elem) elem.scrollIntoView({ behavior: 'smooth' });
                 })}
-                className="w-full py-3.5 px-6 rounded-xl bg-[#00DDBA] hover:bg-[#00c4a5] text-neutral-950 font-mono text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#00DDBA]/20 hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full py-3.5 px-6 rounded-xl bg-[#00DDBA] hover:bg-[#00c4a5] text-neutral-950 font-mono text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#00DDBA]/20 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book 30-Min Session</span>
+                <span>Book a free 30-min infrastructure audit</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <div className="text-[11px] font-mono text-neutral-500 mt-3 text-center w-full">

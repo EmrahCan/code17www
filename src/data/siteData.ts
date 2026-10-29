@@ -33,7 +33,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Enterprise Cloud Security & Infrastructure as Code'
     ],
     technologies: ['Temporal', 'Go', 'Node.js/TypeScript', 'Kubernetes', 'AWS', 'GCP', 'Terraform', 'Docker'],
-    metrics: '99.995% uptime under peak concurrency'
+    metrics: '99.99% uptime target under peak concurrency'
   },
   {
     id: 'frontend-architecture',
@@ -90,44 +90,22 @@ export const SERVICES_DATA: ServiceItem[] = [
 
 export const CASE_STUDIES_DATA: CaseStudy[] = [
   {
-    id: 'fintech-ai-pipeline',
-    client: 'Apex Global Financial',
-    category: 'AI & Systems Engineering',
-    title: 'Autonomous Compliance & Document Intelligence at Scale',
-    subtitle: 'Automating multi-million document regulatory audits with 99.4% accuracy using private LLM agents.',
-    summary: 'Apex Global needed an auditable, high-throughput intelligence platform to process complex international trade filings and flag sanctions without human delay.',
-    tags: ['GenAI Agents', 'Temporal', 'Python', 'Vector DB', 'AWS'],
-    metrics: [
-      { label: 'Latency Reduction', value: '88%' },
-      { label: 'Doc Accuracy', value: '99.4%' },
-      { label: 'Daily Throughput', value: '450k+' }
-    ],
-    challenge: 'Apex was inundated with hundreds of thousands of multi-lingual regulatory documents daily. Traditional OCR and rule-based pipelines generated excessive false positives and required 72+ hours of manual compliance review per batch.',
-    solution: 'Code 17 Technology LLC engineered a resilient Temporal-orchestrated pipeline combining fine-tuned embedding models, strict semantic chunking, and deterministic multi-agent validators with verified audit logs.',
-    impact: [
-      'Reduced document clearance time from 72 hours to under 4 minutes per bundle.',
-      'Achieved strict SOC2 and GDPR compliance with on-premises vector storage.',
-      'Saved an estimated $2.8M annually in operational compliance overhead.'
-    ],
-    techStack: ['Python', 'Temporal Cloud', 'LangChain', 'Qdrant', 'FastAPI', 'Docker', 'AWS Bedrock']
-  },
-  {
     id: 'cloud-zero-downtime',
     client: 'OmniCommerce Global',
     category: 'Cloud & DevOps Architecture',
-    title: 'Zero-Downtime Migration of 280+ Microservices to Kubernetes',
+    title: 'Zero-Downtime Migration of Microservices to Kubernetes',
     subtitle: 'Refactoring high-traffic checkout architecture serving 40M+ monthly active buyers.',
-    summary: 'OmniCommerce faced mounting technical debt and costly cloud vendor lock-in. Code 17 architected a phased canary migration to hybrid Kubernetes clusters.',
+    summary: 'OmniCommerce faced mounting technical debt and costly cloud vendor lock-in. Code17 architected a phased canary migration to hybrid Kubernetes clusters.',
     tags: ['Kubernetes', 'Golang', 'Temporal', 'Terraform', 'Kafka'],
     metrics: [
-      { label: 'Uptime Maintained', value: '100%' },
+      { label: 'Uptime Maintained', value: '99.99%' },
       { label: 'Cloud Cost Cut', value: '-38%' },
       { label: 'P99 Latency', value: '<42ms' }
     ],
     challenge: 'The existing monolith and fragmented microservices experienced frequent downtime during seasonal flash sales, leading to substantial revenue loss and degraded developer velocity.',
-    solution: 'Code 17 designed a dual-worker routing mesh, automated canary deployments with ArgoCD, and orchestrated stateful payment processes with Temporal workflows.',
+    solution: 'Code17 designed a dual-worker routing mesh, automated canary deployments with ArgoCD, and orchestrated stateful payment processes with Temporal workflows.',
     impact: [
-      'Zero seconds of customer-facing downtime during Black Friday / Cyber Week peak.',
+      'Zero customer-facing downtime during Black Friday / Cyber Week peak.',
       'Infra operational expenses reduced by 38% through automated pod auto-scaling.',
       'Deployment frequency accelerated from bi-weekly releases to multiple daily releases.'
     ],
@@ -137,8 +115,8 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
     id: 'enterprise-design-system',
     client: 'Vanguard Health Tech',
     category: 'Frontend & UX Systems',
-    title: 'Unifying 32 Healthcare Applications into a Modern Design System',
-    subtitle: 'Re-engineering frontends for 18,000 clinicians with full WCAG 2.1 AA accessibility and sub-second responsiveness.',
+    title: 'Unifying Healthcare Applications into a Modern Design System',
+    subtitle: 'Re-engineering frontends for clinicians with full WCAG 2.1 AA accessibility and sub-second responsiveness.',
     summary: 'A fragmented suite of legacy web portals was merged into a single cohesive, accessible design system powering both web and clinical tablet interfaces.',
     tags: ['Next.js', 'React', 'TypeScript', 'Figma Tokens', 'Storybook'],
     metrics: [
@@ -146,12 +124,12 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
       { label: 'Accessibility', value: '100% AA' },
       { label: 'Bundle Size Cut', value: '-65%' }
     ],
-    challenge: 'Clinicians were navigating inconsistent UI patterns across multiple portals, causing user fatigue, high error rates, and duplicated engineering efforts across 8 distinct product squads.',
-    solution: 'Code 17 developed a comprehensive token-driven design system in Figma, mirrored by a tested React component library published via private monorepo npm packages with live Storybook docs.',
+    challenge: 'Clinicians were navigating inconsistent UI patterns across multiple portals, causing user fatigue, high error rates, and duplicated engineering efforts across distinct product squads.',
+    solution: 'Code17 developed a comprehensive token-driven design system in Figma, mirrored by a tested React component library published via private monorepo npm packages with live Storybook docs.',
     impact: [
       'New feature deployment time dropped from 6 weeks to 8 business days across teams.',
       'Clinical data entry errors decreased by 41% due to streamlined cognitive ergonomics.',
-      '100% adherence to federal healthcare accessibility and screen-reader standards.'
+      'Full adherence to healthcare accessibility and screen-reader standards.'
     ],
     techStack: ['React 18', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Storybook', 'Figma API', 'Playwright']
   }
@@ -170,21 +148,14 @@ export const PARTNERS_DATA: PartnerTool[] = [
 
 export const TESTIMONIALS_DATA: Testimonial[] = [
   {
-    quote: "Code 17 Technology LLC is hands down the most capable engineering partner we've ever engaged. They didn't just write code—they untangled our most complex architecture bottlenecks and elevated our entire engineering culture.",
-    author: "Marcus Vance",
-    role: "VP of Engineering",
-    company: "Apex Global Financial",
-    projectType: "AI & Distributed Systems Modernization"
-  },
-  {
-    quote: "Most consultants hand you slides and leave. Code 17 rolled up their sleeves, embedded into our squads, and migrated 280+ microservices without a single glitch during our highest-volume shopping season.",
+    quote: "Code17 is hands down the most capable engineering partner we've ever engaged. They untangled our most complex architecture bottlenecks and elevated our entire engineering posture.",
     author: "Elena Rostova",
     role: "Chief Technology Officer",
     company: "OmniCommerce Global",
     projectType: "Cloud & Kubernetes Migration"
   },
   {
-    quote: "The design system and frontend architecture delivered by Code 17 allowed our team to ship 3x faster. Our clinicians genuinely love using the platform now. Outstanding attention to quality and detail.",
+    quote: "The design system and frontend architecture delivered by Code17 allowed our team to ship 3x faster. Outstanding attention to reliability, quality, and detail.",
     author: "Dr. Julian Harris",
     role: "Head of Digital Products",
     company: "Vanguard Health Tech",

@@ -12,17 +12,17 @@ export const TrustedBy: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white border-b border-palark-border">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white border-b border-c17-border">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="text-xs font-bold uppercase tracking-widest text-slate-400 shrink-0">
-            Trusted Stack & Standards
+            Trusted Stack &amp; Standards
           </div>
 
           <div className="flex flex-wrap items-center gap-y-3 gap-x-8 text-sm font-bold text-slate-600">
             {tools.map((t, idx) => (
-              <div key={idx} className="flex items-center gap-2 hover:text-palark-dark transition-colors">
-                <span className="w-2 h-2 rounded-full bg-palark-lime" />
+              <div key={idx} className="flex items-center gap-2 hover:text-c17-dark transition-colors">
+                <span className="w-2 h-2 rounded-full bg-c17-lime" />
                 <span>{t.name}</span>
               </div>
             ))}

@@ -104,7 +104,7 @@ $html_body = "
 
 $resend_payload = [
     'from'     => 'Code17 Portal <contact@code17.tech>',
-    'to'       => ['info@code17.tech'],
+    'to'       => ['contact@code17.tech'],
     'bcc'      => ['emrahcan@hotmail.com'],
     'reply_to' => $email,
     'subject'  => "[Code17 Lead] {$name} ({$company}) - {$service}",

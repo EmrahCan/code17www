@@ -41,10 +41,10 @@ export const ArchitectureRadar: React.FC = () => {
         { name: 'Temporal Cloud', role: 'Durable Execution & Replay Engine' },
         { name: 'Apache Kafka', role: 'High-Throughput Partitioned Event Bus' },
         { name: 'Go / TypeScript', role: 'High-Concurrency Worker Run Times' },
-        { name: 'Redis Sentinel', role: 'Sub-Millisecond Distributed Locks' }
+        { name: 'Redis Sentinel', role: 'Low-Latency Distributed Locks' }
       ],
       tradeoffsSolved: 'Eliminates orphaned transactions and manual database recovery scripts through automatic deterministic workflow resumption across infrastructure outages.',
-      benchmark: 'Zero data loss across 300+ services | 99.999% Execution Reliability'
+      benchmark: 'Zero data loss across critical services | 99.99% Execution Reliability'
     },
     {
       id: 'domain-front',

@@ -14,16 +14,19 @@ export const ClusterMonitorWidget: React.FC = () => {
             <span className="relative inline-flex rounded-full h-3 w-3 bg-[#00DDBA]"></span>
           </span>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-xs font-bold text-palark-dark uppercase tracking-wider">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-mono text-xs font-bold text-c17-dark uppercase tracking-wider">
                 Production Operations Hub
               </span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-bold">
+                Example Dashboard (Illustrative)
+              </span>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#E6FBF7] text-[#00A389] font-bold">
-                99.995% SLA
+                99.99% Target
               </span>
             </div>
-            <div className="text-[11px] text-slate-400 font-mono">
-              Managed 24/7 by Code17.Tech Engineering
+            <div className="text-[11px] text-slate-400 font-mono mt-0.5">
+              Managed 24/7 by Code17 Engineering
             </div>
           </div>
         </div>
@@ -41,8 +44,8 @@ export const ClusterMonitorWidget: React.FC = () => {
           onClick={() => setActiveTab('fleet')}
           className={`py-1.5 rounded-xl transition-all ${
             activeTab === 'fleet'
-              ? 'bg-white text-palark-dark shadow-xs font-extrabold'
-              : 'text-slate-500 hover:text-palark-dark'
+              ? 'bg-white text-c17-dark shadow-xs font-extrabold'
+              : 'text-slate-500 hover:text-c17-dark'
           }`}
         >
           Clusters
@@ -51,8 +54,8 @@ export const ClusterMonitorWidget: React.FC = () => {
           onClick={() => setActiveTab('saas')}
           className={`py-1.5 rounded-xl transition-all ${
             activeTab === 'saas'
-              ? 'bg-white text-palark-purple shadow-xs font-extrabold'
-              : 'text-slate-500 hover:text-palark-dark'
+              ? 'bg-white text-c17-purple shadow-xs font-extrabold'
+              : 'text-slate-500 hover:text-c17-dark'
           }`}
         >
           SaaS Stack
@@ -61,8 +64,8 @@ export const ClusterMonitorWidget: React.FC = () => {
           onClick={() => setActiveTab('gitops')}
           className={`py-1.5 rounded-xl transition-all ${
             activeTab === 'gitops'
-              ? 'bg-white text-palark-dark shadow-xs font-extrabold'
-              : 'text-slate-500 hover:text-palark-dark'
+              ? 'bg-white text-c17-dark shadow-xs font-extrabold'
+              : 'text-slate-500 hover:text-c17-dark'
           }`}
         >
           GitOps
@@ -71,8 +74,8 @@ export const ClusterMonitorWidget: React.FC = () => {
           onClick={() => setActiveTab('sre')}
           className={`py-1.5 rounded-xl transition-all ${
             activeTab === 'sre'
-              ? 'bg-white text-palark-dark shadow-xs font-extrabold'
-              : 'text-slate-500 hover:text-palark-dark'
+              ? 'bg-white text-c17-dark shadow-xs font-extrabold'
+              : 'text-slate-500 hover:text-c17-dark'
           }`}
         >
           24/7 Shift
@@ -85,10 +88,10 @@ export const ClusterMonitorWidget: React.FC = () => {
           <>
             {/* Cluster Nodes Visual Grid */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-slate-100 hover:border-palark-blue transition-colors">
+              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-slate-100 hover:border-c17-blue transition-colors">
                 <div className="flex items-center justify-between text-xs mb-2">
-                  <div className="flex items-center gap-1.5 font-bold text-palark-dark">
-                    <Server className="w-3.5 h-3.5 text-palark-blue" />
+                  <div className="flex items-center gap-1.5 font-bold text-c17-dark">
+                    <Server className="w-3.5 h-3.5 text-c17-blue" />
                     <span>AWS EKS · us-east-1</span>
                   </div>
                   <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
@@ -98,15 +101,15 @@ export const ClusterMonitorWidget: React.FC = () => {
                   <span className="font-bold text-emerald-600">Healthy</span>
                 </div>
                 <div className="w-full bg-slate-200 h-1.5 rounded-full mt-2 overflow-hidden">
-                  <div className="bg-palark-blue h-full rounded-full w-[68%]"></div>
+                  <div className="bg-c17-blue h-full rounded-full w-[68%]"></div>
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-slate-100 hover:border-palark-purple transition-colors">
+              <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-slate-100 hover:border-c17-purple transition-colors">
                 <div className="flex items-center justify-between text-xs mb-2">
-                  <div className="flex items-center gap-1.5 font-bold text-palark-dark">
-                    <Server className="w-3.5 h-3.5 text-palark-purple" />
-                    <span>GCP GKE · eu-west-1</span>
+                  <div className="flex items-center gap-1.5 font-bold text-c17-dark">
+                    <Server className="w-3.5 h-3.5 text-c17-purple" />
+                    <span>GCP GKE · europe-west1</span>
                   </div>
                   <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                 </div>
@@ -115,7 +118,7 @@ export const ClusterMonitorWidget: React.FC = () => {
                   <span className="font-bold text-emerald-600">Healthy</span>
                 </div>
                 <div className="w-full bg-slate-200 h-1.5 rounded-full mt-2 overflow-hidden">
-                  <div className="bg-palark-purple h-full rounded-full w-[54%]"></div>
+                  <div className="bg-c17-purple h-full rounded-full w-[54%]"></div>
                 </div>
               </div>
             </div>
@@ -125,12 +128,12 @@ export const ClusterMonitorWidget: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Activity className="w-4 h-4 text-[#9540FF]" />
-                  <span className="font-sans font-bold text-xs text-palark-dark">
-                    Live Telemetry & Ingress
+                  <span className="font-sans font-bold text-xs text-c17-dark">
+                    Live Telemetry &amp; Ingress
                   </span>
                 </div>
                 <div className="flex items-center gap-3 font-mono text-[11px]">
-                  <span className="text-slate-500">p99 Latency: <strong className="text-palark-dark">11.4ms</strong></span>
+                  <span className="text-slate-500">p99 Latency: <strong className="text-c17-dark">11.4ms</strong></span>
                   <span className="text-slate-500">Error rate: <strong className="text-emerald-600">0.00%</strong></span>
                 </div>
               </div>
@@ -167,8 +170,8 @@ export const ClusterMonitorWidget: React.FC = () => {
             <div className="grid grid-cols-2 gap-3">
               <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-slate-100">
                 <div className="flex items-center justify-between text-xs mb-1.5">
-                  <div className="flex items-center gap-1.5 font-bold text-palark-dark">
-                    <Database className="w-3.5 h-3.5 text-palark-purple" />
+                  <div className="flex items-center gap-1.5 font-bold text-c17-dark">
+                    <Database className="w-3.5 h-3.5 text-c17-purple" />
                     <span>Multi-Tenant DB</span>
                   </div>
                   <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
@@ -183,16 +186,16 @@ export const ClusterMonitorWidget: React.FC = () => {
 
               <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-slate-100">
                 <div className="flex items-center justify-between text-xs mb-1.5">
-                  <div className="flex items-center gap-1.5 font-bold text-palark-dark">
-                    <CreditCard className="w-3.5 h-3.5 text-palark-blue" />
-                    <span>Billing & Subscriptions</span>
+                  <div className="flex items-center gap-1.5 font-bold text-c17-dark">
+                    <CreditCard className="w-3.5 h-3.5 text-c17-blue" />
+                    <span>Billing &amp; Subscriptions</span>
                   </div>
                   <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                 </div>
                 <div className="text-[11px] font-mono text-slate-500">
                   Stripe Webhook Engine
                 </div>
-                <div className="mt-1 text-[10px] font-bold text-palark-blue font-mono">
+                <div className="mt-1 text-[10px] font-bold text-c17-blue font-mono">
                   Instant Webhook Delivery
                 </div>
               </div>
@@ -201,9 +204,9 @@ export const ClusterMonitorWidget: React.FC = () => {
             {/* Microservices & API Throughput */}
             <div className="p-4 rounded-2xl bg-[#F8F9FA] border border-slate-100 space-y-2.5">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 font-bold text-xs text-palark-dark">
+                <div className="flex items-center gap-2 font-bold text-xs text-c17-dark">
                   <Layers className="w-4 h-4 text-[#00A389]" />
-                  <span>SaaS API & Workflow Pipeline</span>
+                  <span>SaaS API &amp; Workflow Pipeline</span>
                 </div>
                 <span className="px-2 py-0.5 rounded-md bg-[#E6FBF7] text-[#00A389] text-[10px] font-mono font-bold">
                   8.2ms p99 SPEED
@@ -217,7 +220,7 @@ export const ClusterMonitorWidget: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-between p-2 rounded-xl bg-white border border-slate-100">
                   <span className="text-slate-600">Temporal Workflow Jobs</span>
-                  <span className="text-palark-purple font-bold">1,420 Completed (0 Failed)</span>
+                  <span className="text-c17-purple font-bold">1,420 Completed (0 Failed)</span>
                 </div>
               </div>
             </div>
@@ -228,8 +231,8 @@ export const ClusterMonitorWidget: React.FC = () => {
           <div className="space-y-3">
             <div className="p-4 rounded-2xl bg-[#F8F9FA] border border-slate-100 space-y-3">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 font-bold text-xs text-palark-dark">
-                  <GitBranch className="w-4 h-4 text-palark-blue" />
+                <div className="flex items-center gap-2 font-bold text-xs text-c17-dark">
+                  <GitBranch className="w-4 h-4 text-c17-blue" />
                   <span>ArgoCD Automated Continuous Sync</span>
                 </div>
                 <span className="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-[10px] font-mono font-bold">
@@ -244,7 +247,7 @@ export const ClusterMonitorWidget: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-between p-2 rounded-xl bg-white border border-slate-100">
                   <span className="text-slate-600">Config Drift Check</span>
-                  <span className="text-palark-blue font-bold">0 Diffs (100% Declarative)</span>
+                  <span className="text-c17-blue font-bold">0 Diffs (100% Declarative)</span>
                 </div>
               </div>
             </div>
@@ -263,7 +266,7 @@ export const ClusterMonitorWidget: React.FC = () => {
           <div className="space-y-3">
             <div className="p-4 rounded-2xl bg-[#F8F9FA] border border-slate-100 space-y-3">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 font-bold text-xs text-palark-dark">
+                <div className="flex items-center gap-2 font-bold text-xs text-c17-dark">
                   <Zap className="w-4 h-4 text-[#9540FF]" />
                   <span>Active On-Call Operations Shift</span>
                 </div>
@@ -274,14 +277,14 @@ export const ClusterMonitorWidget: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <div className="p-3 rounded-xl bg-white border border-slate-100">
-                  <div className="text-slate-400 text-[10px] uppercase font-mono">Guaranteed SLA</div>
-                  <div className="font-bold text-palark-dark text-sm mt-0.5">&lt; 15 Minutes</div>
+                  <div className="text-slate-400 text-[10px] uppercase font-mono">Response Target SLA</div>
+                  <div className="font-bold text-c17-dark text-sm mt-0.5">&lt; 15 Minutes</div>
                   <div className="text-[10px] text-emerald-600 font-medium">Average: 4.8 min</div>
                 </div>
                 <div className="p-3 rounded-xl bg-white border border-slate-100">
                   <div className="text-slate-400 text-[10px] uppercase font-mono">Escalation Desk</div>
-                  <div className="font-bold text-palark-dark text-sm mt-0.5">Tier 3 SRE Lead</div>
-                  <div className="text-[10px] text-slate-500 font-medium">Direct Slack & Phone</div>
+                  <div className="font-bold text-c17-dark text-sm mt-0.5">Tier 3 SRE Lead</div>
+                  <div className="text-[10px] text-slate-500 font-medium">Direct Slack &amp; Phone</div>
                 </div>
               </div>
             </div>

@@ -30,9 +30,9 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService }) =
       badge: '24/7 SUPPORT',
       badgeClass: 'badge-lime',
       title: '24/7 SRE Maintenance & SLAs',
-      description: 'Round-the-clock site reliability engineering with guaranteed 15-minute emergency SLA response, proactive monitoring, and disaster recovery.',
+      description: 'Round-the-clock site reliability engineering with P1 incident response under 15 minutes, proactive monitoring, and disaster recovery.',
       icon: Activity,
-      highlights: ['Guaranteed 99.99% Uptime SLA', 'Prometheus & Grafana Observability', 'Zero data-loss failover'],
+      highlights: ['99.99% Uptime Target in SLA', 'Prometheus & Grafana Observability', 'Zero data-loss failover'],
     },
     {
       id: 'high-load',
@@ -41,7 +41,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService }) =
       title: 'High-Concurrency APIs & Microservices',
       description: 'Architecting distributed databases, multi-region failovers, and caching topologies engineered to handle flash crowds, seasonal spikes, and high throughput.',
       icon: Layers,
-      highlights: ['High-Concurrency Database Clusters', 'Kafka / RabbitMQ Event Mesh', 'Global Sub-Millisecond Routing'],
+      highlights: ['High-Concurrency Database Clusters', 'Kafka / RabbitMQ Event Mesh', 'Global Low-Latency Routing'],
     },
     {
       id: 'ai-llm',
@@ -64,23 +64,23 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService }) =
   ];
 
   return (
-    <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8F9FA] border-b border-palark-border">
+    <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8F9FA] border-b border-c17-border">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-palark-purple mb-2">
+            <div className="text-xs font-bold uppercase tracking-widest text-c17-purple mb-2">
               OUR SERVICE CATALOG
             </div>
-            <h2 className="font-sans font-black text-3xl sm:text-4xl text-palark-dark tracking-tight">
+            <h2 className="font-sans font-black text-3xl sm:text-4xl text-c17-dark tracking-tight">
               Transparent, All-in-One Services
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-palark-gray max-w-md font-normal">
+          <p className="text-sm sm:text-base text-c17-gray max-w-md font-normal">
             Whether you need 24/7 SRE maintenance on a flat monthly rate or a dedicated project migration squad, we have you covered.
           </p>
         </div>
 
-        {/* 6 Cards Grid (Palark signature clean card design) */}
+        {/* 6 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s) => {
             const Icon = s.icon;
@@ -89,12 +89,12 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService }) =
               'badge-blue': { bg: 'bg-[#EAF6FF]', text: 'text-[#0088FF]', hoverBg: 'group-hover:bg-[#0088FF] group-hover:text-white' },
               'badge-lime': { bg: 'bg-[#E6FBF7]', text: 'text-[#00A389]', hoverBg: 'group-hover:bg-[#00A389] group-hover:text-white' },
             };
-            const theme = iconThemes[s.badgeClass] || { bg: 'bg-[#F2F4F7]', text: 'text-palark-dark', hoverBg: 'group-hover:bg-palark-dark group-hover:text-white' };
+            const theme = iconThemes[s.badgeClass] || { bg: 'bg-[#F2F4F7]', text: 'text-c17-dark', hoverBg: 'group-hover:bg-c17-dark group-hover:text-white' };
 
             return (
               <div
                 key={s.id}
-                className="bg-white border border-palark-border hover:border-slate-400 rounded-3xl p-8 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between group"
+                className="bg-white border border-c17-border hover:border-slate-400 rounded-3xl p-8 transition-all duration-200 shadow-xs hover:shadow-md flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -106,18 +106,18 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService }) =
                     </div>
                   </div>
 
-                  <h3 className="font-sans font-bold text-xl text-palark-dark mb-3">
+                  <h3 className="font-sans font-bold text-xl text-c17-dark mb-3">
                     {s.title}
                   </h3>
 
-                  <p className="text-sm text-palark-gray leading-relaxed mb-6 font-normal">
+                  <p className="text-sm text-c17-gray leading-relaxed mb-6 font-normal">
                     {s.description}
                   </p>
 
                   <div className="space-y-2 border-t border-slate-100 pt-4 mb-6">
                     {s.highlights.map((h, hIdx) => (
                       <div key={hIdx} className="text-xs text-slate-700 font-medium flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-palark-purple" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-c17-purple" />
                         <span>{h}</span>
                       </div>
                     ))}
@@ -126,7 +126,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService }) =
 
                 <button
                   onClick={() => onSelectService(s.title)}
-                  className="w-full pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-palark-dark hover:text-palark-purple transition-colors"
+                  className="w-full pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-c17-dark hover:text-c17-purple transition-colors cursor-pointer"
                 >
                   <span>Inquire about {s.title}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

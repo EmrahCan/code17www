@@ -137,14 +137,14 @@ export const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose }) => {
         <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-neutral-400 font-mono relative z-10">
           <span className="flex items-center gap-1">
             <Shield className="w-3.5 h-3.5 text-emerald-400" />
-            ISO 27001 Secure Voice
+            Encrypted Voice Stream
           </span>
           <a
-            href="mailto:info@code17.tech"
+            href="mailto:contact@code17.tech"
             className="text-[#00DDBA] hover:underline flex items-center gap-1"
           >
             <Mail className="w-3 h-3" />
-            info@code17.tech
+            contact@code17.tech
           </a>
         </div>
       </div>

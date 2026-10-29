@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        palark: {
+        c17: {
           dark: '#1B1F24',
           charcoal: '#231F20',
           gray: '#5E6470',

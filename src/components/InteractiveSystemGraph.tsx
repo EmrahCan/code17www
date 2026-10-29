@@ -45,8 +45,8 @@ export const InteractiveSystemGraph: React.FC = () => {
       category: 'Distributed State',
       icon: GitBranch,
       status: 'healthy',
-      latency: '1.2ms',
-      throughput: '99.999% SLA',
+      latency: '8.2ms',
+      throughput: '99.99% Target',
       details: 'Durable execution state machines managing transactions with automated zero-loss failover.',
       tech: ['Temporal Cloud', 'Go Workers', 'Kafka', 'gRPC']
     },
@@ -56,8 +56,8 @@ export const InteractiveSystemGraph: React.FC = () => {
       category: 'Infrastructure',
       icon: Database,
       status: 'healthy',
-      latency: '0.8ms',
-      throughput: '100% Zero-Loss',
+      latency: '6.4ms',
+      throughput: 'Zero Data-Loss',
       details: 'Auto-scaling multi-region Kubernetes clusters orchestrated with GitOps & ArgoCD.',
       tech: ['Kubernetes', 'Terraform', 'AWS EKS', 'Datadog']
     },

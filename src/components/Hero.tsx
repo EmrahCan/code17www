@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Terminal, ShieldCheck, Activity, Layers, Zap, Calendar } from 'lucide-react';
+import { ArrowUpRight, Terminal, ShieldCheck, Activity, Layers, Zap } from 'lucide-react';
 import { ClusterMonitorWidget } from './ClusterMonitorWidget';
 
 interface HeroProps {
@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenPricing, onOpen
           <div className="flex items-center gap-4 text-[11px]">
             <span className="inline-flex items-center gap-1.5 text-neutral-700">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="font-semibold text-neutral-900">SYSTEMS ACTIVE</span> // 99.995% SLA
+              <span className="font-semibold text-neutral-900">SYSTEMS ACTIVE</span> // 99.99% UPTIME TARGET
             </span>
             <span className="hidden md:inline text-neutral-400">GLOBAL NODE: US-WEST / EU-CENTRAL</span>
           </div>
@@ -50,16 +50,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenPricing, onOpen
           <div className="lg:col-span-7 space-y-6">
             
             {/* Free Audit High-Intent Callout */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-900/10 via-purple-500/10 to-[#00DDBA]/10 border border-purple-500/25 text-xs font-mono font-medium text-purple-950">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-bold text-neutral-900">FREE AUDIT:</span> 30-Min Infrastructure, Microservices &amp; Systems Review ($0)
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-900/10 via-purple-500/10 to-[#00DDBA]/10 border border-purple-500/25 text-xs font-mono font-medium text-purple-950 max-w-full">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+              <span className="font-bold text-neutral-900">FREE AUDIT:</span>
+              <span className="truncate">30-Min Systems &amp; Infra Review ($0)</span>
             </div>
 
             {/* Interactive Discipline Mode Filter */}
-            <div className="flex items-center p-1 rounded-lg bg-neutral-200/70 border border-neutral-300/80 font-mono text-xs w-fit">
+            <div className="flex items-center p-1 rounded-lg bg-neutral-200/70 border border-neutral-300/80 font-mono text-xs w-full sm:w-fit overflow-x-auto max-w-full">
               <button
                 onClick={() => setFocusMode('unified')}
-                className={`px-3 py-1.5 rounded-md transition-all font-medium ${
+                className={`px-3 py-1.5 rounded-md transition-all font-medium shrink-0 cursor-pointer ${
                   focusMode === 'unified'
                     ? 'bg-white text-neutral-950 shadow-xs font-bold'
                     : 'text-neutral-600 hover:text-neutral-950'
@@ -69,23 +70,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenPricing, onOpen
               </button>
               <button
                 onClick={() => setFocusMode('saas')}
-                className={`px-3 py-1.5 rounded-md transition-all font-medium ${
+                className={`px-3 py-1.5 rounded-md transition-all font-medium shrink-0 cursor-pointer ${
                   focusMode === 'saas'
                     ? 'bg-white text-neutral-950 shadow-xs font-bold'
                     : 'text-neutral-600 hover:text-neutral-950'
                 }`}
               >
-                01 SAAS PRODUCT LAB
+                01 SAAS LAB
               </button>
               <button
                 onClick={() => setFocusMode('sre')}
-                className={`px-3 py-1.5 rounded-md transition-all font-medium ${
+                className={`px-3 py-1.5 rounded-md transition-all font-medium shrink-0 cursor-pointer ${
                   focusMode === 'sre'
                     ? 'bg-white text-neutral-950 shadow-xs font-bold'
                     : 'text-neutral-600 hover:text-neutral-950'
                 }`}
               >
-                02 24/7 SRE COMMAND
+                02 SRE COMMAND
               </button>
             </div>
 
@@ -116,7 +117,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenPricing, onOpen
               )}
               {focusMode === 'sre' && (
                 <p className="text-base sm:text-lg text-neutral-800 leading-relaxed font-normal max-w-2xl bg-[#00DDBA]/10 border-l-2 border-[#00DDBA] pl-3 py-1">
-                  <strong>SRE Discipline:</strong> 24/7/365 active shift on-call rotations, Kubernetes fleet management, ArgoCD declarative GitOps, zero-downtime migrations, and sub-15 minute SLA incident resolution.
+                  <strong>SRE Discipline:</strong> 24/7/365 active shift on-call rotations, Kubernetes fleet management, ArgoCD declarative GitOps, zero-downtime migrations, and P1 incident response under 15 minutes.
                 </p>
               )}
             </div>
@@ -125,32 +126,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenPricing, onOpen
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onOpenBooking || onOpenContact}
-                className="group relative inline-flex items-center gap-3 bg-[#0B0C14] hover:bg-neutral-800 text-white font-mono text-xs uppercase tracking-wider font-bold px-7 py-4 rounded-xl shadow-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 border border-purple-500/30"
+                className="group relative inline-flex items-center gap-3 bg-[#0B0C14] hover:bg-neutral-800 text-white font-mono text-xs uppercase tracking-wider font-bold px-7 py-4 rounded-xl shadow-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 border border-purple-500/30 cursor-pointer"
               >
                 <Zap className="w-4 h-4 text-amber-400 fill-amber-400" />
-                <span>Claim Free 30-Min Audit</span>
+                <span>Book a free 30-min infrastructure audit</span>
                 <ArrowUpRight className="w-4 h-4 text-[#00DDBA] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>
 
               <button
-                onClick={onOpenContact}
-                className="inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-wider font-semibold text-neutral-800 hover:text-neutral-950 bg-white hover:bg-neutral-50 px-6 py-4 rounded-xl border border-neutral-300/90 transition-colors shadow-2xs"
-              >
-                <Calendar className="w-3.5 h-3.5 text-purple-600" />
-                <span>Book 15-Min Discovery</span>
-              </button>
-
-              <button
                 onClick={onOpenPricing}
-                className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-neutral-500 hover:text-neutral-950 transition-colors px-3 py-4"
+                className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-neutral-500 hover:text-neutral-950 transition-colors px-3 py-4 cursor-pointer"
               >
                 <span>Pricing ↓</span>
               </button>
             </div>
 
-            {/* Industrial Specs Matrix Strip (Replacing Generic AI Badges) */}
+            {/* Industrial Specs Matrix Strip */}
             <div className="pt-6">
-              <div className="grid grid-cols-3 gap-0 border border-neutral-200 rounded-xl bg-white overflow-hidden text-left divide-x divide-neutral-200">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-neutral-200 rounded-xl bg-white overflow-hidden text-left divide-y sm:divide-y-0 sm:divide-x divide-neutral-200">
                 
                 <div className="p-3.5 sm:p-4 hover:bg-neutral-50/60 transition-colors">
                   <div className="flex items-center gap-2 text-neutral-400 text-[10px] font-mono uppercase tracking-wider">
@@ -161,7 +154,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenPricing, onOpen
                     &lt; 15 min
                   </div>
                   <div className="text-[11px] text-neutral-500 font-sans mt-0.5">
-                    Guaranteed contractually
+                    Defined in your SLA
                   </div>
                 </div>
 
@@ -184,10 +177,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenPricing, onOpen
                     <span>Compliance</span>
                   </div>
                   <div className="mt-1 font-mono text-sm sm:text-base font-bold text-neutral-900">
-                    ISO 27001
+                    ISO 27001 / SOC 2
                   </div>
                   <div className="text-[11px] text-neutral-500 font-sans mt-0.5">
-                    Zero-trust cloud ops
+                    Aligned security controls
                   </div>
                 </div>
 

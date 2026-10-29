@@ -1,1 +1,3 @@
-<?php readfile(__DIR__ . '/../finikego/privacy.html'); ?>
+<?php
+readfile(__DIR__ . '/index.html');
+exit;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { TestimonialSlider } from './components/TestimonialSlider';
+import { HowWeWork } from './components/HowWeWork';
 import { TrustedBy } from './components/TrustedBy';
 import { WhatWeDo } from './components/WhatWeDo';
 import { SaaSSection } from './components/SaaSSection';
@@ -44,19 +44,19 @@ export function App() {
 
   const handleSelectService = (serviceName: string) => {
     setSelectedService(serviceName);
-    setPrepopulatedMessage(`Hello Code17.Tech team, I am interested in your "${serviceName}" offering. Please get in touch to discuss our infrastructure & engineering needs.`);
+    setPrepopulatedMessage(`Hello Code17 team, I am interested in your "${serviceName}" offering. Please get in touch to discuss our infrastructure & engineering needs.`);
     scrollToContact();
   };
 
   const handleSelectPlan = (planName: string, tier: string) => {
     setSelectedService(planName);
-    setPrepopulatedMessage(`Hello Code17.Tech team, we would like to get started with the "${planName}" package (${tier}). Please connect us with a Lead SRE Architect.`);
+    setPrepopulatedMessage(`Hello Code17 team, we would like to get started with the "${planName}" package (${tier}). Please connect us with a Lead SRE Architect.`);
     scrollToContact();
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#1B1F24] selection:bg-[#00DDBA] selection:text-[#1B1F24]">
-      {/* 1. Header & Navigation (Palark style + Cloud Posse action) */}
+    <div className="min-h-screen bg-white text-[#1B1F24] selection:bg-[#00DDBA] selection:text-[#1B1F24] overflow-x-hidden">
+      {/* 1. Header & Navigation */}
       <Navbar
         onOpenContact={scrollToDiscuss}
         onOpenPricing={scrollToPricing}
@@ -64,21 +64,21 @@ export function App() {
         onOpenCall={() => setIsCallOpen(true)}
       />
 
-      <main>
-        {/* 2. Palark Signature Hero */}
+      <main className="overflow-x-hidden">
+        {/* 2. Signature Hero */}
         <Hero
           onOpenContact={scrollToDiscuss}
           onOpenPricing={scrollToPricing}
           onOpenBooking={() => setIsBookingOpen(true)}
         />
 
-        {/* 3. Testimonial Quote Slider */}
-        <TestimonialSlider />
+        {/* 3. How We Work (Audit -> Plan -> Build -> Operate 24/7) */}
+        <HowWeWork />
 
         {/* 4. Trusted Stack & Cloud Native Tools */}
         <TrustedBy />
 
-        {/* 5. What We Do (Palark Editorial Section) */}
+        {/* 5. What We Do */}
         <WhatWeDo onOpenContact={scrollToDiscuss} />
 
         {/* 6. SaaS & Software Engineering Section */}
@@ -87,19 +87,19 @@ export function App() {
         {/* 7. All-in-One Service Grid */}
         <ServicesGrid onSelectService={handleSelectService} />
 
-        {/* 7. Team Experience & Lead Architect Spotlight */}
+        {/* 8. Team Experience & Lead Architect Spotlight */}
         <TeamExperience onOpenBooking={() => setIsBookingOpen(true)} />
 
-        {/* 8. Our Engagement (Open Source, Knowledge Sharing, Community) */}
+        {/* 9. Our Engagement (Open Source, Knowledge Sharing, Community) */}
         <EngagementSection />
 
-        {/* 9. Transparent Flat Monthly Pricing */}
+        {/* 10. Transparent Flat Monthly Pricing */}
         <PricingSection onSelectPlan={handleSelectPlan} />
 
-        {/* 10. Start with your infrastructure problem (High-Conversion Intake) */}
+        {/* 11. Start with your infrastructure problem (High-Conversion Intake) */}
         <ProblemIntakeSection onOpenCall={() => setIsCallOpen(true)} />
 
-        {/* 11. Detailed Contact & Desk Information */}
+        {/* 12. Detailed Contact & Desk Information */}
         <ContactSection
           preselectedService={selectedService}
           prepopulatedMessage={prepopulatedMessage}
@@ -107,16 +107,16 @@ export function App() {
         />
       </main>
 
-      {/* 12. Imprint & Footer */}
+      {/* 13. Imprint & Footer */}
       <Footer onOpenCall={() => setIsCallOpen(true)} />
 
-      {/* 13. High-Converting Instant Booking Modal (Ad Lead Magnet) */}
+      {/* 14. High-Converting Instant Booking Modal */}
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
       />
 
-      {/* 14. Interactive WebRTC Call Modal Popup */}
+      {/* 15. Interactive WebRTC Call Modal Popup */}
       <CallModal
         isOpen={isCallOpen}
         onClose={() => setIsCallOpen(false)}

@@ -62,22 +62,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Palark-style Direct Contacts */}
+          {/* Left Column: Direct Contacts */}
           <div className="lg:col-span-5 space-y-8">
             <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-palark-purple mb-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-c17-purple mb-2">
                 GET IN TOUCH
               </div>
-              <h2 className="font-sans font-black text-3xl sm:text-5xl text-palark-dark tracking-tight">
+              <h2 className="font-sans font-black text-3xl sm:text-5xl text-c17-dark tracking-tight">
                 Let’s talk about your infrastructure
               </h2>
             </div>
 
-            <p className="text-base sm:text-lg text-palark-gray leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-c17-gray leading-relaxed font-normal">
               Whether you need 24/7 SRE on-call support, a migration to Kubernetes, or private AI rollout, our lead architects are ready to assist.
             </p>
 
-            {/* Free 30-Min Infrastructure, Microservices & Architecture Audit Card (High-Converting Ad Hook) */}
+            {/* Free 30-Min Infrastructure Audit Card */}
             <div className="p-6 rounded-2xl bg-[#0B0C14] text-white border border-purple-500/40 shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-44 h-44 bg-purple-600/20 rounded-full blur-2xl pointer-events-none" />
               <div className="flex items-center justify-between mb-3 relative z-10">
@@ -99,28 +99,28 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   const elem = document.getElementById('discuss');
                   if (elem) elem.scrollIntoView({ behavior: 'smooth' });
                 })}
-                className="w-full py-3 px-4 rounded-xl bg-[#00DDBA] hover:bg-[#00c4a5] text-neutral-950 font-mono text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-md relative z-10"
+                className="w-full py-3 px-4 rounded-xl bg-[#00DDBA] hover:bg-[#00c4a5] text-neutral-950 font-mono text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-md relative z-10 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book 30-Min Architecture Audit</span>
+                <span>Book a free 30-min infrastructure audit</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
 
-          {/* Right Column: Clean White Form (Palark style) */}
+          {/* Right Column: Clean White Form */}
           <div className="lg:col-span-7">
-            <div className="bg-[#F8F9FA] border border-palark-border rounded-3xl p-6 sm:p-10 shadow-sm">
+            <div className="bg-[#F8F9FA] border border-c17-border rounded-3xl p-6 sm:p-10 shadow-xs">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
                   <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="font-sans font-black text-2xl text-palark-dark">
+                  <h3 className="font-sans font-black text-2xl text-c17-dark">
                     Thank You! Message Received.
                   </h3>
-                  <p className="text-sm text-palark-gray max-w-md mx-auto">
-                    A Senior SRE Architect from <strong>Code17.Tech</strong> will review your infrastructure details and contact you shortly.
+                  <p className="text-sm text-c17-gray max-w-md mx-auto">
+                    A Senior SRE Architect from <strong>Code17</strong> will review your infrastructure details and contact you shortly.
                   </p>
 
                   {/* Calendly Fast Track */}
@@ -129,7 +129,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       href="https://calendly.com/code17-info/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#0B0C14] hover:bg-black text-white font-mono text-xs font-bold px-6 py-3.5 rounded-full shadow-md transition-all"
+                      className="inline-flex items-center gap-2 bg-[#0B0C14] hover:bg-black text-white font-mono text-xs font-bold px-6 py-3.5 rounded-full shadow-md transition-all cursor-pointer"
                     >
                       <Calendar className="w-4 h-4 text-[#00DDBA]" />
                       <span>Want to talk sooner? Pick a Calendly Slot Now</span>
@@ -139,7 +139,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-4 px-6 py-2 rounded-full border border-slate-300 text-slate-600 text-xs font-semibold hover:bg-white transition-colors"
+                    className="mt-4 px-6 py-2 rounded-full border border-slate-300 text-slate-600 text-xs font-semibold hover:bg-white transition-colors cursor-pointer"
                   >
                     Send another inquiry
                   </button>
@@ -157,7 +157,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Thomas Weber"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-palark-border focus:border-palark-dark text-palark-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-c17-border focus:border-c17-dark text-c17-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -171,7 +171,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="name@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-palark-border focus:border-palark-dark text-palark-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-c17-border focus:border-c17-dark text-c17-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -187,7 +187,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="e.g. Acme Corp"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-palark-border focus:border-palark-dark text-palark-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-c17-border focus:border-c17-dark text-c17-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -200,7 +200,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+1 (555) 000-0000"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-palark-border focus:border-palark-dark text-palark-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-c17-border focus:border-c17-dark text-c17-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -212,18 +212,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-palark-border focus:border-palark-dark text-palark-dark text-sm focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-c17-border focus:border-c17-dark text-c17-dark text-sm focus:outline-none transition-colors cursor-pointer"
                     >
-                      <option value="Free 30-Min Infrastructure, Microservices & Systems Audit">🎯 Free 30-Min Microservices, Infrastructure & Systems Audit ($0 - Recommended)</option>
-                      <option value="Dedicated SaaS & SRE Squad">Dedicated SaaS & SRE Squad ($4,500/mo)</option>
-                      <option value="Continuous SRE & DevOps">Continuous SRE & DevOps ($2,000/mo)</option>
+                      <option value="Free 30-Min Infrastructure, Microservices & Systems Audit">🎯 Free 30-Min Microservices, Infrastructure &amp; Systems Audit ($0 - Recommended)</option>
+                      <option value="Dedicated SaaS & SRE Squad">Dedicated SaaS &amp; SRE Squad ($4,500/mo)</option>
+                      <option value="Continuous SRE & DevOps">Continuous SRE &amp; DevOps ($2,000/mo)</option>
                       <option value="SaaS MVP Launch Sprint">SaaS MVP Launch Sprint ($9,500 package)</option>
                       <option value="Full-Cycle SaaS Product Engineering">Full-Cycle SaaS Product Engineering</option>
-                      <option value="DevOps as a Service">DevOps as a Service (ArgoCD & K8s)</option>
-                      <option value="24/7 SRE Maintenance & SLAs">24/7 SRE Maintenance & SLAs (15-min SLA)</option>
-                      <option value="High-Concurrency APIs & Microservices">High-Concurrency APIs & Microservices</option>
-                      <option value="AI-Native SaaS & Private LLMs">AI-Native SaaS & Private LLMs</option>
-                      <option value="Cloud Migration & Modernization">Cloud Migration & Modernization</option>
+                      <option value="DevOps as a Service">DevOps as a Service (ArgoCD &amp; K8s)</option>
+                      <option value="24/7 SRE Maintenance & SLAs">24/7 SRE Maintenance &amp; SLAs (15-min SLA)</option>
+                      <option value="High-Concurrency APIs & Microservices">High-Concurrency APIs &amp; Microservices</option>
+                      <option value="AI-Native SaaS & Private LLMs">AI-Native SaaS &amp; Private LLMs</option>
+                      <option value="Cloud Migration & Modernization">Cloud Migration &amp; Modernization</option>
                       <option value="Custom Enterprise Solution">Custom Enterprise Solution</option>
                     </select>
                   </div>
@@ -238,7 +238,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your current infrastructure, cloud provider, SLA needs, or upcoming deadlines..."
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-palark-border focus:border-palark-dark text-palark-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-c17-border focus:border-c17-dark text-c17-dark text-sm placeholder:text-slate-400 focus:outline-none transition-colors resize-none"
                     />
                   </div>
 
@@ -252,7 +252,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-palark-dark hover:bg-black disabled:opacity-50 text-white font-bold text-base py-4 rounded-full shadow-md transition-all flex items-center justify-center gap-2"
+                    className="w-full bg-c17-dark hover:bg-black disabled:opacity-50 text-white font-bold text-base py-4 rounded-full shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <span>Sending your message via Resend...</span>

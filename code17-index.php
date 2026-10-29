@@ -1,8 +1,158 @@
 <?php
 /**
- * Code 17 Technology LLC - Live Web App Entrypoint
- * Palark.com aesthetic: European precision SRE + SaaS Product Engineering
+ * Code17 Technologies LLC - Live Web App Entrypoint
+ * Dual-discipline production engineering: 24/7 SRE + SaaS Product Engineering
  */
+
+// Route inspection
+$request_path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+
+// Direct serving for legal sub-routes if routed through PHP
+if ($request_path === '/privacy' || $request_path === '/privacy/') {
+    $privacy_file = __DIR__ . '/privacy/index.html';
+    if (file_exists($privacy_file)) {
+        header('Content-Type: text/html; charset=utf-8');
+        readfile($privacy_file);
+        exit;
+    }
+}
+
+if ($request_path === '/terms' || $request_path === '/terms/') {
+    $terms_file = __DIR__ . '/terms/index.html';
+    if (file_exists($terms_file)) {
+        header('Content-Type: text/html; charset=utf-8');
+        readfile($terms_file);
+        exit;
+    }
+}
+
+if ($request_path === '/imprint' || $request_path === '/imprint/') {
+    $imprint_file = __DIR__ . '/imprint/index.html';
+    if (file_exists($imprint_file)) {
+        header('Content-Type: text/html; charset=utf-8');
+        readfile($imprint_file);
+        exit;
+    }
+}
+
+// 404 handler for unknown routes
+$valid_paths = ['/', '/index.php'];
+if (!in_array($request_path, $valid_paths)) {
+    http_response_code(404);
+    header('Cache-Control: no-cache, no-store, must-revalidate');
+    ?>
+<!doctype html>
+<html lang="en" class="bg-white text-[#1B1F24]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found | Code17</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 24px;
+        padding: 48px;
+        max-width: 520px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 24px;
+        text-decoration: none;
+        color: #0f172a;
+        font-weight: 800;
+        font-size: 22px;
+      }
+      .badge {
+        background: #0f172a;
+        color: #ffffff;
+        padding: 4px 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .accent { color: #00DDBA; }
+      .code {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 64px;
+        font-weight: 800;
+        color: #9540FF;
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 12px;
+      }
+      p {
+        font-size: 15px;
+        color: #64748b;
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #0f172a;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 14px;
+        padding: 14px 28px;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .btn:hover { background: #1e293b; }
+      .support {
+        margin-top: 24px;
+        font-size: 13px;
+        color: #94a3b8;
+      }
+      .support a { color: #9540FF; text-decoration: none; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <a href="/" class="brand">
+        <span class="badge">17</span>
+        <span>Code17<span class="accent">.Tech</span></span>
+      </a>
+      <div class="code">404</div>
+      <h1>Page Not Found</h1>
+      <p>The page or route you requested does not exist or has been relocated to another endpoint.</p>
+      <a href="/" class="btn">&larr; Return to Code17 Home</a>
+      <div class="support">
+        Need assistance? Email <a href="mailto:contact@code17.tech">contact@code17.tech</a>
+      </div>
+    </div>
+  </body>
+</html>
+    <?php
+    exit;
+}
 
 // Enforce strict anti-caching for SPA entrypoint
 header('Cache-Control: no-cache, no-store, must-revalidate, max-age=0');
@@ -26,15 +176,17 @@ $css_url = !empty($css_files) ? '/wp-content/themes/code17-theme/assets/' . base
 $js_url = !empty($js_files) ? '/wp-content/themes/code17-theme/assets/' . basename($js_files[0]) . '?v=' . $build_id : '';
 ?>
 <!doctype html>
-<html lang="en" class="scroll-smooth bg-white text-[#1B1F24]">
+<html lang="en" class="scroll-smooth bg-white text-[#1B1F24] overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code17.Tech | 24/7 SRE & Full-Cycle SaaS Engineering</title>
-    <meta name="description" content="Mission-critical 24/7 SRE infrastructure management, Kubernetes orchestration, and high-concurrency SaaS product development by Code17.Tech." />
+    <meta name="description" content="Mission-critical 24/7 SRE infrastructure management, Kubernetes orchestration, and high-concurrency SaaS product development by Code17 Technologies LLC." />
     <link rel="canonical" href="https://code17.tech" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/code17-icon-512.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- OpenGraph / Social Media Meta -->
     <meta property="og:type" content="website" />
@@ -61,7 +213,7 @@ $js_url = !empty($js_files) ? '/wp-content/themes/code17-theme/assets/' . basena
         {
           "@type": "Organization",
           "@id": "https://code17.tech/#organization",
-          "name": "Code17 Technologies",
+          "name": "Code17 Technologies LLC",
           "url": "https://code17.tech",
           "logo": {
             "@type": "ImageObject",
@@ -71,7 +223,7 @@ $js_url = !empty($js_files) ? '/wp-content/themes/code17-theme/assets/' . basena
           },
           "email": "contact@code17.tech",
           "sameAs": [
-            "https://www.linkedin.com/company/code17-tech"
+            "https://www.linkedin.com/company/code17tech"
           ],
           "description": "Dual-discipline technology studio delivering 24/7 mission-critical SRE infrastructure and high-concurrency enterprise SaaS development."
         },
@@ -120,11 +272,21 @@ $js_url = !empty($js_files) ? '/wp-content/themes/code17-theme/assets/' . basena
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      @media (max-width: 430px) {
+        #myZadarmaCallmeWidget19992 {
+          bottom: 16px !important;
+          right: 16px !important;
+          transform: scale(0.88);
+          transform-origin: bottom right;
+        }
+      }
+    </style>
     <?php if ($css_url): ?>
     <link rel="stylesheet" href="<?php echo htmlspecialchars($css_url); ?>">
     <?php endif; ?>
   </head>
-  <body class="bg-white font-sans antialiased text-[#1B1F24] selection:bg-[#7000FF]/15 selection:text-[#7000FF]">
+  <body class="bg-white font-sans antialiased text-[#1B1F24] overflow-x-hidden selection:bg-[#7000FF]/15 selection:text-[#7000FF]">
     <div id="root"></div>
     <?php if ($js_url): ?>
     <script type="module" src="<?php echo htmlspecialchars($js_url); ?>"></script>

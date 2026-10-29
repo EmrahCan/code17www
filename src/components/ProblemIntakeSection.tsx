@@ -320,8 +320,8 @@ export const ProblemIntakeSection: React.FC<ProblemIntakeSectionProps> = ({ onOp
               <div className="mt-5 pt-4 border-t border-white/[0.08] text-center">
                 <span className="text-xs text-neutral-400 font-mono">
                   You can also email us at{' '}
-                  <a href="mailto:info@code17.tech" className="text-neutral-200 hover:text-purple-300 underline font-semibold">
-                    info@code17.tech
+                  <a href="mailto:contact@code17.tech" className="text-neutral-200 hover:text-purple-300 underline font-semibold">
+                    contact@code17.tech
                   </a>
                 </span>
               </div>
@@ -331,7 +331,7 @@ export const ProblemIntakeSection: React.FC<ProblemIntakeSectionProps> = ({ onOp
 
         </div>
 
-        {/* Bottom Professional Scope Disclaimer (as seen in Cloud Posse reference) */}
+        {/* Bottom Professional Scope Disclaimer */}
         <div className="mt-16 pt-8 border-t border-white/[0.08] text-center max-w-3xl mx-auto space-y-2">
           <p className="text-xs sm:text-sm text-neutral-300 font-normal leading-relaxed">
             This conversation establishes fit and the next step; it is not a comprehensive infrastructure audit.
